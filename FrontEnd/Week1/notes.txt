@@ -1,0 +1,52 @@
+September 5,2024
+
+Front End Technology
+
+Difference between Front-end AND back-end!
+
+Front-end Technologies: HTML,CSS, JavaScript (Both)
+Back-end Technologies: JavaScript(Both), Express JS, SQL Server, MongoDB
+
+Full Stack Developer???
+
+Both Front-end AND back-end .. You are considered as a full stack developer...
+
+MERN (MongoDB Express JS, React JS(FUNNY- OUR DISCUSSION), Node JS)
+React JS: based on HTML, CSS and JavaScript wholly... 
+FULL STACK DEVELOPER!
+
+MEAN (,,Angular JS, ) Stack! .. full stack developer!
+
+
+What is the Internet?
+
+"Network of Networks"
+Web - world wide web??? web is a subset of internet- allows us to access web services , request resurces like images pages etc.. and transmit data btween clients and servers...virtual directory of web resourse..web uses internet as a backbone to transmit data from one side to other and vise versa.
+
+Web runs of top of TCP/IP networks using a number of conmmunciaiton protocols...
+
+IP: 32 bit number(IPV4) are assigned to every device on the internet...
+
+202.102.23.123   IPV4
+128 bit number   IPV6  
+
+Domain Names:Human readable names of the websites...
+Domain Name System (DNS) ..."the phone book" of the internet...
+HTTP: Hyper Text Transfer Protocol..
+HTTPS: Secure...
+
+HTTP Requests and Responses!
+
+Client Requests
+Server Responds..
+
+URL:
+https://www.google.com
+
+https: protocol...
+
+domain: www.google.com 
+
+port: NOT GIVEN...65000 above.... 443: for https://  80: for http:// 5000, 5500
+
+origin: Combining protocol, domain, port... GIVES US orgin...Origin plays a centralrole in the web's security model...
