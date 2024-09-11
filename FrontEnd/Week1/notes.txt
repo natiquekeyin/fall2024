@@ -50,3 +50,17 @@ domain: www.google.com
 port: NOT GIVEN...65000 above.... 443: for https://  80: for http:// 5000, 5500
 
 origin: Combining protocol, domain, port... GIVES US orgin...Origin plays a centralrole in the web's security model...
+
+Response Codes:
+    That tells us what has happened with the request:
+        200 . OK
+        404 . Error -resource not found
+
+QueryString:
+something added after the URL, starting with "?"... is called querystring.
+Extra information to make something happen when you access a URL...
+Fragments on the web page:
+id = "some"
+
+<a href="./pages/about#some">Hello</a>
+
