@@ -119,9 +119,63 @@
 //   }
 // }
 
-for (let i = 0; i < 3; i++) {
-  for (let j = 0; j < i; j++) {
-    console.log(`${i},${j}`);
-  }
-  console.log("\n");
+// for (let i = 0; i < 3; i++) {
+//   for (let j = 0; j < i; j++) {
+//     console.log(`${i},${j}`);
+//   }
+//   console.log("\n");
+// }
+
+// Function Declarations:
+
+// function noop() {}
+// // noop is a function which accepts nothing and returns nothing...
+
+function square(n) {
+  return n * n;
 }
+
+x = square(5);
+// // square isa function that accepts ONE number and returns square of it...
+
+// function add(a, b) {
+//   console.log("Welcome to function");
+//   console.log("SOmething happening");
+//   return a + b;
+// }
+// // add accepts two parameters.. and returns one value.(the two parameters addition)
+
+// // noop(); // calling/executed/invoked the noop function...
+
+// // console.log(square(3));
+
+// // console.log(add(13, 14));
+
+// // console.log(add(5, 5));
+// // 3+undefined = NaN; undefined+undefined = NaN ....
+
+// console.log(add(3));
+
+// Function Expressions:
+
+// let noop = function () {}; //noop is a variable that has function as a value
+// let square = function (n) {
+//   return n * n;
+// };
+// let add = function (a, b) {
+//   return a + b;
+// };
+
+// console.log(noop());
+// console.log(square(2));
+// console.log(add(4, 2));
+
+// Arrow Functions:
+
+// let noop = () => {}; //arrow funciton...
+
+// let square = (n) => n * n;
+
+// let add = (a, b) => a + b; //only one return statement.. remove { } and also remove the return keyword ...
+
+// console.log(square(5));
