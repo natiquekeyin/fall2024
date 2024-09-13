@@ -1,3 +1,4 @@
 Lecture 0:
 
 How do we run a js file?
+By using either of the three ways
