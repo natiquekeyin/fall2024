@@ -1,5 +1,9 @@
 Lecture 0:
 
 How do we run a js file?
+<<<<<<< HEAD
 
 REPL
+=======
+By using either of the three ways
+>>>>>>> 06339ca27987057f2e447405cd5a503ed87b7722
