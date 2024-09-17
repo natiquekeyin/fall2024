@@ -107,3 +107,33 @@
 
 // Date.now()
 // Date.getTime()
+
+// scope:
+
+// function myFunction() {
+//   {
+//     var name = "Alan Smith";
+//   }
+//   console.log(name);
+// }
+
+// myFunction();
+
+function f() {
+  //var x;    Hoisting
+  y = x + z + 1;
+  console.log(y);
+  var x = 2;
+  var z = 3;
+}
+
+console.log(y);
+f();
+
+// function f() {
+//   // var x;
+//   x = 2; // `x` is assigned a value, but not declared
+//   return x + 1;
+// }
+
+f();
