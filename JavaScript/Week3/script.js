@@ -119,16 +119,16 @@
 
 // myFunction();
 
-function f() {
-  //var x;    Hoisting
-  y = x + z + 1;
-  console.log(y);
-  var x = 2;
-  var z = 3;
-}
+// function f() {
+//   //var x;    Hoisting
+//   y = x + z + 1;
+//   console.log(y);
+//   var x = 2;
+//   var z = 3;
+// }
 
-console.log(y);
-f();
+// console.log(y);
+// f();
 
 // function f() {
 //   // var x;
@@ -136,4 +136,40 @@ f();
 //   return x + 1;
 // }
 
-f();
+// f();
+
+// let ..
+
+// function f() {
+//   {
+//     let i = 10;
+//     const j = 20;
+
+//     console.log(j);
+//   }
+//   // console.log(j);
+//   // console.log(i);
+// }
+// f();
+
+let str = "The best sound is. this world, is. your .name";
+
+// function addPeriod(s) {
+//   return s + ".";
+// }
+
+// function addPeriod(s) {
+//   if (s.endsWith(".")) {
+//     return s;
+//   } else {
+//     return `${s}.`;
+//   }
+// }
+
+function addPeriod(s) {
+  //let lastPos = s.length - 1;
+  return s.lastIndexOf(".") === s.length - 1 ? s : `${s}.`;
+}
+
+console.log(addPeriod("Hello."));
+console.log(str);
