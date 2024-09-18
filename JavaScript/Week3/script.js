@@ -152,24 +152,98 @@
 // }
 // f();
 
-let str = "The best sound is. this world, is. your .name";
+// let str = "The best sound is. this world, is. your .name";
+
+// // function addPeriod(s) {
+// //   return s + ".";
+// // }
+
+// // function addPeriod(s) {
+// //   if (s.endsWith(".")) {
+// //     return s;
+// //   } else {
+// //     return `${s}.`;
+// //   }
+// // }
 
 // function addPeriod(s) {
-//   return s + ".";
+//   //let lastPos = s.length - 1;
+//   return s.lastIndexOf(".") === s.length - 1 ? s : `${s}.`;
 // }
 
-// function addPeriod(s) {
-//   if (s.endsWith(".")) {
-//     return s;
-//   } else {
-//     return `${s}.`;
-//   }
+// console.log(addPeriod("Hello."));
+// console.log(str);
+
+// Arrays:
+
+// let nums = [1, 2, 3, 4];
+// console.log(nums[0]);
+
+// let list = [0, "1", "Alan", true];
+
+// let position = [43.3402, -89.2334];
+// // index notation ...
+// // let lat = position[0];
+// // let lng = position[1];
+
+// // destructure..
+
+// let [lat, lng] = position;
+
+// let dateString = `19/09/2024`;
+// let [day, month, year] = dateString.split("/");
+// console.log(`Today is ${day} date of ${month} in the year ${year}`);
+
+// let emailAddress = "noman.atique@keyin.com";
+// let [domainName] = emailAddress.split("@");
+// console.log(domainName);
+
+// let dateString = `19/09/2024`;
+// let [day, , year] = dateString.split("/");
+// console.log(`Today is date of ${day} in the year ${year}`);
+
+// let nums = [44, 22, 23, 88];
+// push() inserts a number at the end
+
+// console.log(nums);
+// nums.push(100);
+// console.log(nums);
+
+// pop() deletes a number from the end...
+// nums.pop();
+// console.log(nums);
+// nums.unshift(100);
+// console.log(nums);
+// nums.unshift(200);
+// console.log(nums);
+
+// // shift .. to remove something from the beginning...
+// nums.shift();
+// console.log(nums);
+// nums.shift();
+// console.log(nums);
+
+// .join() is the opposite of .split method..
+// split splits a string on given character...
+// join joins a string to make it array by using given character...
+
+// let nums = [2, 1, 4, 6, 7];
+
+// for loop:
+// for (let i = 0; i < nums.length; i++) {
+//   console.log(nums[i] + 3);
 // }
 
-function addPeriod(s) {
-  //let lastPos = s.length - 1;
-  return s.lastIndexOf(".") === s.length - 1 ? s : `${s}.`;
-}
+//
 
-console.log(addPeriod("Hello."));
-console.log(str);
+let nums = [3, 2, 6, 7];
+
+let listCopy = [];
+nums.forEach(function (element) {
+  listCopy.push(element + 3);
+});
+
+let nums1 = [3, 2, 6, 7];
+
+let listCopy1 = nums.map((element) => element + 3);
+console.log(listCopy1);
