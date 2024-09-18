@@ -1,0 +1,8 @@
+<form> </form>
+
+action: What you want to do with the form when it is submitted...
+        "data.php"... "mailto:natique@conestogac.on.ca"
+method: Which method we want to use to send data...
+        "get", "post" by using "get" data goes as part of URL, by using "post" data goes as part of body
+label: 
+input: type = "text"... id & name

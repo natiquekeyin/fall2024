@@ -1,0 +1,65 @@
+<!-- September 18,2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms in HTML</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <!-- Forms are used to take input from user.. -->
+    <!-- Form controls are the elements that are used to take input -->
+
+    <h2>Registration</h2>
+    <form action="data.php" method="get">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          maxlength="30"
+          autofocus
+          tabindex="1"
+          placeholder="Enter your name here"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          tabindex="2"
+          placeholder="Enter your email here"
+        />
+      </div>
+      <div>
+        <label for="program">Program</label>
+        <input type="radio" name="program" value="Morning" />Morning
+        <input type="radio" name="program" value="Evening" />Evening
+      </div>
+      <div>
+        <label for="">Hobbies</label>
+        <input type="checkbox" name="hobbies" value="Gym" />GYM
+        <input type="checkbox" name="hobbies" value="coin" />Coin
+        <input type="checkbox" name="hobbies" value="Reading" />Reading
+      </div>
+      <div>
+        <label for="">Comments</label>
+        <textarea
+          name="comments"
+          id="comments"
+          rows="10"
+          cols="50"
+          placeholder="Enter your comments here... "
+        ></textarea>
+      </div>
+
+      <input type="submit" value="SEND" />
+      <input type="reset" value="CLEAR" />
+    </form>
+  </body>
+</html>
