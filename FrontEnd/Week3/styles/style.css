@@ -1,0 +1,56 @@
+/* html,
+body {
+  font-size: 16px;
+} */
+
+h1 {
+  color: red;
+  background-color: wheat;
+}
+
+div {
+  border: 1px solid green;
+  margin-bottom: 20px;
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.r1 {
+  font-size: 100px;
+}
+
+#p1 {
+  background-color: beige;
+  font-size: 2rem;
+}
+
+#d1 {
+  font-size: 2rem;
+  /* 40px */
+}
+
+#p2 {
+  /* 80 */
+  /* 40 */
+  /* r is root... rem means take the root value and multiply it... */
+  font-size: 2rem;
+}
+
+section {
+  border: 1px solid green;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+#s1 {
+  flex: 1;
+}
+#s2 {
+  flex: 1;
+}
+#s3 {
+  flex: 1;
+}
