@@ -17,7 +17,7 @@
 // let listCopy1 = nums.map((element) => element + 3);
 // console.log(listCopy1);
 
-let nums = [2, 5, 1, 6, 7];
+// let nums = [2, 5, 1, 6, 7];
 // filter() filters out values on the basis of given condition inside the callback function
 
 // let numsCopy = nums.filter((value) => value > 3);

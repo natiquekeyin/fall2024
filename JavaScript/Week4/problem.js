@@ -11,11 +11,40 @@
 
 var csvData = `0134138,Alan Smith,333-580-2254,70 inches
 0134139   ,    Christina    Lee    ,  1234126347 ,        130 cm
-0134140,       Doug Thomas       , 5324126347, 158cm`;
+0134140,       Doug         Thomas       , 5324126347, 158cm`;
+
+function splitIntoRows(s) {
+  return s.split(/\r?\n/);
+}
+
+function rowToFields(row) {
+  return row.split(/\s*,\s*/);
+}
 
 function processCSV(csv) {
-  return csv;
+  //Step1: convert the csv into array of rows
+  let rows = splitIntoRows(csv);
+
+  //   Step2 - split all rows into array of fields
+
+  //   let data = [];
+  //   for (let i = 0; i < rows.length; i++) {
+  //     let row = rows[i];
+  //     let fields = rowToFields(row);
+  //     data.push(fields);
+  //   }
+
+  //   for (let row of rows) {
+  //     let fields = rowToFields(row);
+  //     data.push(fields);
+  //   }
+
+  let data = rows.map((row) => rowToFields(row));
+
+  console.log(data);
+
+  return rows;
 }
 
 var processed = processCSV(csvData);
-console.log(processed);
+// console.log(processed);
