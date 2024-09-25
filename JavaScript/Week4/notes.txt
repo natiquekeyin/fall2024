@@ -1,0 +1,9 @@
+// fields[1] = fields[1].replace(/\s+/, " ");
+
+
+ // let phoneNumber = fields[2];
+  // let matches = phoneNumber.match(/\(?(\d{3})\)?[\s-]*(\d{3})[\s-]*(\d{4})/);
+  // if (matches) {
+  //   // store only the area code in fields[2]
+  //   fields[2] = `${matches[1]}-${matches[2]}-${matches[3]}`;
+  // }
