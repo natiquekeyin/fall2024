@@ -1,0 +1,71 @@
+body {
+  background-color: aqua;
+}
+.item1 {
+  grid-area: header;
+  background-color: beige;
+}
+.item2 {
+  grid-area: menu;
+  background-color: bisque;
+}
+
+.item3 {
+  grid-area: main;
+  background-color: antiquewhite;
+}
+
+.item4 {
+  grid-area: right;
+  background-color: wheat;
+}
+.item5 {
+  grid-area: footer;
+  background-color: turquoise;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header header header header header" "menu main main main right right" "menu footer footer footer footer footer";
+  gap: 2px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Media Queries.. if else programming for different screens */
+
+@media (max-width: 600px) {
+  body {
+    background-color: wheat;
+  }
+  .grid-container {
+    grid-template-areas: "header" "menu" "main" "right" "footer";
+  }
+
+  .item1 {
+    background-color: red;
+  }
+  .item2 {
+    background-color: green;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    background-color: wheat;
+  }
+  .grid-container {
+    grid-template-areas: "header header" "menu main" " main main" "right" "footer";
+  }
+
+  .item1 {
+    background-color: red;
+  }
+  .item2 {
+    background-color: green;
+  }
+}
