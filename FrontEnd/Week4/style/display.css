@@ -1,0 +1,24 @@
+#div-1 {
+  background-color: red;
+  width: 200px;
+  height: 40px;
+}
+
+#span-1 {
+  display: inline-block;
+  /* inline-block will make element both hybrid inline and block.. setting up width and height and keeping its inline nature */
+  background-color: cyan;
+  width: 200px;
+  /* height and width only work when display is BLOCK.. */
+  height: 40px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#span-2 {
+  background-color: purple;
+}
+
+#div-2 {
+  background-color: green;
+}

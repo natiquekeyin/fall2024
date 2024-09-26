@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 400px;
+  height: 410px;
+  border: 5px solid black;
+  margin: 20px auto;
+}
+
+.item1,
+.item2 {
+  width: 200px;
+  height: 200px;
+}
+
+.item1 {
+  /* position: fixed;
+  left: 30px;
+  top: 130px; */
+  background-color: #c38e70;
+  border: 10px solid green;
+  padding: 10px;
+}
+
+.item2 {
+  /* position: sticky;
+  left: 100px;
+  top: 50px; */
+  background-color: burlywood;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: wheat;
+}
+
+/* static: default position.. */
+/* relative: Take its initial position and can be translated from there on */
+/* absolute: By default it is positioned realtev to its closest ancestor(usually body)...if you define postion relative ona parent elemtn then its is going to be position in that context */
+/* fixed: Rips out the element from the document and fixes it to the viewport... */
+/* sticky: switched between position static and fixed... */

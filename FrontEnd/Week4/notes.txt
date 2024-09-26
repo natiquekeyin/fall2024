@@ -1,2 +1,7 @@
 Flexbox Model: 
 CSS Grid: Multidimensional .. We can have rows and columns
+
+
+Next Week:
+
+DOM: ...
