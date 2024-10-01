@@ -1,0 +1,22 @@
+
+OOP: Object Oriented Programming...
+    Where we consider everything as an OBJECT and do programming around it...
+    Object will have -i) Data ... ii) Functions(Code) [code and data]
+    
+    "class" is a combination of code and data!
+    classes are not usable, rather we create "Objects" to work on classes...
+
+    Object is an instantiation of a class...usable form...
+
+In Classical javascript there was no concept of class!but there were few methods to make object (without classes...)
+
+"constructor" function:
+
+Prototypal Inheritance- The real OOP begins...
+create a constructor function and place all unused items in the prototype to save teh space while createing new objects...
+
+let obj = {
+    course:'JavaScript',
+    school:'Keyin College',
+    semester:2,
+};
