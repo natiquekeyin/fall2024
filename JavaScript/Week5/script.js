@@ -119,34 +119,71 @@
 // user1.prefs.color = "Green";
 // console.log(user1);
 
-function User(f, l, a) {
-  this.firstName = f;
-  this.lastName = l;
-  this.age = a;
-}
+// function User(f, l, a) {
+//   this.firstName = f;
+//   this.lastName = l;
+//   this.age = a;
+// }
 
-User.prototype.email = "default@gmail.com";
-User.prototype.loggedIn = false;
-User.prototype.lastLoggedIn = new Date();
-User.prototype.level = 1;
-User.prototype.hobbies = ["reading", "gym", "cycling"];
-User.prototype.prefs = { color: "red", model: "Volvo" };
+// User.prototype.email = "default@gmail.com";
+// User.prototype.loggedIn = false;
+// User.prototype.lastLoggedIn = new Date();
+// User.prototype.level = 1;
+// User.prototype.hobbies = ["reading", "gym", "cycling"];
+// User.prototype.prefs = { color: "red", model: "Volvo" };
 
-User.prototype.login = function () {
-  this.loggedIn = true;
-};
-User.prototype.logout = function () {
-  this.loggedIn = false;
-};
+// User.prototype.login = function () {
+//   this.loggedIn = true;
+// };
+// User.prototype.logout = function () {
+//   this.loggedIn = false;
+// };
 
-let user1 = new User("Alan", "Smith", 20);
-let user2 = new User("Bob", "Smith", 23);
-let user3 = new User("Christina", "Smith", 25);
-let user4 = new User("Doug", "Smith", 21);
-console.log(user1);
-user1.login();
-console.log(user1.hobbies);
-console.log(user1);
+// let user1 = new User("Alan", "Smith", 20);
+// let user2 = new User("Bob", "Smith", 23);
+// let user3 = new User("Christina", "Smith", 25);
+// let user4 = new User("Doug", "Smith", 21);
+// console.log(user1);
+// console.log(user1.hobby);
+
+// user1.login();
+// console.log(user1.hobbies);
+// console.log(user1);
 // console.log(user2);
 // console.log(user3);
 // console.log(user4);
+
+// function User(id, name) {
+//   this.id = id;
+//   this.name = name;
+// }
+
+// User.prototype.toString = function () {
+//   return `${this.name} (#${this.id})`;
+// };
+
+// let user1 = new User(1, "Alan Smith");
+// console.log(user1.toString());
+
+// OTHER THAN JS, ALL OOP LANGUAGES DEFINE CONSTRUCTOR WITH THE SAME NAME AS CLASS..
+
+class User {
+  id; //member variables
+  name; //member variable
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+  }
+  // member function
+  toString() {
+    return `${this.name} (#${this.id})`;
+  }
+}
+
+// a constructor should have same name as class (NOT IN JAVASCRIPT)
+// a constructor function is automatically called when object is created...
+
+//
+let user2 = new User(3, "Christina");
+console.log(user2);
+console.log(user2.toString());

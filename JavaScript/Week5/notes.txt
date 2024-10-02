@@ -20,3 +20,7 @@ let obj = {
     school:'Keyin College',
     semester:2,
 };
+
+
+class:
+In recent years (ES5 ES6), a new syntax has been added to JS to allow more familiar with traditional OOP style progreamming to define theri objects using a new "class" keyword.
