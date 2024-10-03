@@ -1,1 +1,17 @@
 Please read the week 5 ppt, we will discuss this on Wednesday in Front-end session
+
+
+4. Events: JS is an event driven programming...it will run some code whenever an event occurs..
+
+    onclick()
+
+
+ let cat = document.querySelector("#cat");
+
+  cat.onload = function () {
+    console.log("Cat img loaded");
+  };
+
+  cat.onerror = function () {
+    console.log("cat image error");
+  };
