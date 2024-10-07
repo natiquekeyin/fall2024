@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
   console.log("DOM Content loaded");
 
-  this.document.body.addEventListener("click", function (e) {
+  this.document.body.addEventListener("mousemove", function (e) {
     // console.log(e.clientX);
     // console.log(e.clientY);
 
@@ -49,4 +49,13 @@ window.addEventListener("DOMContentLoaded", function () {
     // console.log(ol);
     evt.stopPropagation();
   }
+
+  // Timer functions...
+  // this.setTimeout(function () {
+  //   cat.src = nextCatImageUrl();
+  // }, 3000);
+
+  setInterval(function () {
+    cat.src = nextCatImageUrl();
+  }, 3000);
 });
