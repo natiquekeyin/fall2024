@@ -65,7 +65,7 @@ let morse = {
 
 // Return `true` if all characters are morse code.  Use a RegExp.
 function isMorse(characters) {
-  return /^[.\-/]*$/.test(characters);
+  return /^[.\- /]*$/.test(characters);
 }
 
 // Return `true` if all characters are part of the alphabet defined in `alpha`.  Use a RegExp.
@@ -95,7 +95,9 @@ function textToMorse(text) {
   words = text.split(" ");
   //   Run each word throuh convertWordToMorse() and build a new array
 
-  morse = words.map((word) => convertWordToMorse(word));
+  morse = words.map(function (word) {
+    return convertWordToMorse(word);
+  });
 
   //   return a string of all words converted to morse, joined by /
   return morse.join("/");
@@ -103,20 +105,54 @@ function textToMorse(text) {
 
 // Given a morse code message, convert and return in text.  Use your morse and/or alpha object.
 // Return undefined if morse is not proper code.
-function morseToText(morse) {}
+function morseToText(data) {
+  function convertMorseToWord(morseWord) {
+    // each morse letter is separate by a space. Convert to an array
+    morseWord = morseWord.split(" ");
+
+    // build a new array by looking up each morse letter in the morse object, jon together into a string and return
+
+    let letters = morseWord.map(function (morseLetter) {
+      return morse[morseLetter];
+    });
+
+    return letters.join("");
+  }
+
+  // split the morse into separate words( / is the separator)
+  let morseWords = data.split("/");
+
+  // G through each morse wor, and convert it into alpha, building a new array
+
+  let words = morseWords.map(function (morseWord) {
+    return convertMorseToWord(morseWord);
+  });
+
+  return words.join("");
+}
 
 // Message class that takes a `message` (String), which can be either morse or alpha.
 // Use your functions above to decide how to store a value for `any` on `this`
 class Message {
-  constructor(text) {}
+  text;
+  constructor(t) {
+    this.text = t.toUpperCase();
+  }
 
-  // Return the message as morse code, converting if necessary
-  toMorse() {}
+  toMorse() {
+    if (isMorse(this.text)) {
+      return this.text;
+    }
+    return textToMorse(this.text);
+  }
 
-  // Return the message as alpha characters, converting if necessary
-  toAlpha() {}
+  toAlpha() {
+    if (isAlpha(this.text)) {
+      return this.text;
+    }
+    return morseToText(this.text);
+  }
 }
-
 let msg1 = new Message(
   "--- -... .--- . -.-. - .../.. -./.--- .- ...- .- ... -.-. .-. .. .--. -/.- .-. ./...- . .-. -.--/.--. --- .-- . .-. ..-. ..- .-.."
 );
