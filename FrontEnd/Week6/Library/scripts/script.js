@@ -9,16 +9,22 @@ window.addEventListener("DOMContentLoaded", function () {
     let author = document.querySelector("#author").value;
 
     addBookToList(title, isbn, author);
-    clearFields();
 
     e.preventDefault();
   });
 
   function addBookToList(t, i, a) {
-    let tr = document.createElement("tr");
-    tr.innerHTML = `<td>${t}</td><td>${i}</td><td>${a}</td><td><button>X</button>`;
+    if (t === "" || i === "" || a === "") {
+      showAlert("No field should be empty", "error");
+    } else {
+      let tr = document.createElement("tr");
 
-    document.querySelector("#list").appendChild(tr);
+      tr.innerHTML = `<td>${t}</td><td>${i}</td><td>${a}</td><td ><button class="delete">X</button>`;
+
+      document.querySelector("#list").appendChild(tr);
+      clearFields();
+      showAlert("Book Successfully added", "success");
+    }
   }
 
   function clearFields() {
@@ -26,4 +32,32 @@ window.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#isbn").value = "";
     document.querySelector("#author").value = "";
   }
+
+  function showAlert(m, c) {
+    let div = document.createElement("div");
+    div.innerText = m;
+    div.className = c;
+    div.id = "box";
+    document.querySelector("#notify").appendChild(div);
+    setTimeout(function () {
+      document.querySelector("#box").remove();
+    }, 3000);
+  }
+
+  this.document.querySelector("#area").addEventListener("click", function (e) {
+    deleteBook(e.target);
+    //console.log(e.target);
+  });
+
+  function deleteBook(elemToDelete) {
+    if (elemToDelete.className === "delete") {
+      elemToDelete.parentElement.parentElement.remove();
+      showAlert("Book successfully delete", "success");
+    } else {
+      showAlert("Wrong area clicked!Click on X", "error");
+    }
+  }
 });
+
+// let's convert this code into REAL object oriented.. into the classes...
+// we will make books permanent storing them in browser memory...
