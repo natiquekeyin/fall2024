@@ -24,4 +24,26 @@ window.addEventListener("DOMContentLoaded", function () {
     // send the request
     xhr.send(); //one thousand times I will forget this step...
   }
+
+  let btn2 = document.querySelector("#btn2");
+  btn2.addEventListener("click", loadJSON);
+
+  function loadJSON(e) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "./data/user.json");
+
+    xhr.onload = function () {
+      if (this.status === 200) {
+        let user = JSON.parse(this.responseText);
+        let output = `ID: ${user.id} <br/> Name: ${user.name} <br/>Email:${user.email}`;
+
+        document.querySelector("#data").innerHTML = output;
+      }
+    };
+
+    xhr.send();
+
+    e.preventDefault();
+  }
 });
