@@ -1,4 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
+  //Store.displayBooks();
+
   class Book {
     constructor(t, i, a) {
       this.title = t;
@@ -12,11 +14,11 @@ window.addEventListener("DOMContentLoaded", function () {
       } else {
         let tr = document.createElement("tr");
 
-        tr.innerHTML = `<td>${book.title}</td><td>${book.isbn}</td><td>${book.author}</td><td ><button class="delete">X</button>`;
+        tr.innerHTML = `<td>${book.title}</td><td>${book.author}</td><td>${book.isbn}</td><td ><button class="delete">X</button>`;
 
         document.querySelector("#list").appendChild(tr);
         this.clearFields();
-        this.showAlert("Book Successfully added", "success");
+        // this.showAlert("Book Successfully added", "success");
       }
     }
 
@@ -39,7 +41,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
     deleteBook(elemToDelete) {
       if (elemToDelete.className === "delete") {
+        var isbn =
+          elemToDelete.parentElement.previousElementSibling.textContent;
         elemToDelete.parentElement.parentElement.remove();
+        Store.removeBook(isbn);
         this.showAlert("Book successfully delete", "success");
       } else {
         this.showAlert("Wrong area clicked!Click on X", "error");
@@ -68,8 +73,27 @@ window.addEventListener("DOMContentLoaded", function () {
       }
       return books;
     }
-    static displayBooks() {}
-    static removeBook() {}
+    static displayBooks() {
+      var books = Store.getBooks();
+      books.forEach((book) => {
+        // each book should be displayed in the table below form..
+        //addBookToList(book); //cannot directly call addBookToList(). Why? because addBookTOList() is in another class and it is not STATIC....
+
+        var objBook = new Book();
+        objBook.addBookToList(book);
+      });
+    }
+    static removeBook(isbn) {
+      // remove a book from memory...
+      // use filter() method: filter() returns a new array on the basis of given condition...
+
+      // books = books.filter((book)=>)
+
+      var books = Store.getBooks();
+      books = books.filter((book) => book.isbn !== isbn);
+
+      localStorage.setItem("books", JSON.stringify(books));
+    }
   }
 
   let form = document.querySelector("#form1");
@@ -82,7 +106,8 @@ window.addEventListener("DOMContentLoaded", function () {
     let book = new Book(title, isbn, author);
 
     book.addBookToList(book); //adding the book to UI
-    Store.addBook(book);
+    Store.addBook(book); //static members are called class level members...
+    book.showAlert("Book Successfully added", "success");
 
     e.preventDefault();
   });
@@ -92,8 +117,12 @@ window.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function (evt) {
       var book = new Book(); //because delte book is in Book class and we don't have access to book object here..
       book.deleteBook(evt.target);
+
+      Store.removeBook(isbn);
       evt.preventDefault();
     });
+
+  Store.displayBooks();
 });
 
 // function, method, object...
