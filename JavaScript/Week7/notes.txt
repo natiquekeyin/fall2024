@@ -1,0 +1,18 @@
+Promises:
+    I will take an extra session on Friday: Promise!
+    Promise fulfilled: I take the session
+    Promise not fulfilled: I don't take the session
+
+    Promises in JS are also same:
+        i)resolve - fulfilled
+        ii)reject - not fulfilled..
+    How to write promises in JS?
+
+
+
+
+
+Fetch API: uses promises!
+ A default api for asynchronous communication. It returns a promise rather then normal values...
+
+
