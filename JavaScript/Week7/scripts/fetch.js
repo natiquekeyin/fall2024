@@ -21,22 +21,34 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let btn2 = document.querySelector("#btn2");
 
-  btn2.addEventListener("click", loadJSON);
+  // function loadJSON() {
+  //   fetch("./data/user.json")
+  //     .then(function (response) {
+  //       if (!response.ok) {
+  //         throw new Error("Not found");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(function (data) {
+  //       document.querySelector("#data").innerHTML = `<div>
+  //      <h1>${data.name}</h1><h2>${data.id}</h2><h2>${data.email}</h2></div>`;
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
 
-  function loadJSON() {
-    fetch("./data/user.json")
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("Not found");
-        }
-        return response.json();
-      })
-      .then(function (data) {
-        document.querySelector("#data").innerHTML = `<div>
-       <h1>${data.name}</h1><h2>${data.id}</h2><h2>${data.email}</h2></div>`;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  const loadJSON = async () => {
+    try {
+      let response = await fetch("https://reqres.in/ai/users");
+      let data = await response.json();
+      this.document.querySelector(
+        "#data"
+      ).innerHTML = `<div><h1>Name:${data.data[0].first_name}</h1></div>`;
+    } catch (error) {
+      this.document.querySelector("#data").innerHTML = `The error is: ${error}`;
+    }
+  };
+
+  btn2.addEventListener("click", loadJSON);
 });
