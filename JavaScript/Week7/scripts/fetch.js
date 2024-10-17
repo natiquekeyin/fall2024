@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function () {
   btn2.addEventListener("click", loadJSON);
 
   function loadJSON() {
-    fetch("./data/user.json")
+    fetch("./data/user1.json")
       .then(function (response) {
         if (!response.ok) {
           throw new Error("Not found");
