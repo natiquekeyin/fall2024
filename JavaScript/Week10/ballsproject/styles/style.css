@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 20px auto;
+  background-color: wheat;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#box1Count,
+#box2Count {
+  color: green;
+
+  font-size: 6rem;
+}
