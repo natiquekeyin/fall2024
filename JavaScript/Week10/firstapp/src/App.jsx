@@ -1,12 +1,10 @@
-import Test from "./components/Test";
-import Test2 from "./components/Test2";
+import Header from "./components/Header";
 
 function App() {
-  let myStyle = { color: "blue" };
   return (
     <>
-      <Test />
-      <Test2 />
+      <Header body="This is body of My App" title="First App" />
+      <Header title="Second App" />
     </>
   );
 }
