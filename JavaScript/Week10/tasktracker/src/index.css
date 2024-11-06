@@ -12,7 +12,6 @@ body {
 }
 
 .container {
-  background-color: beige;
   max-width: 500px;
   margin: 30px auto;
   min-height: 300px;
