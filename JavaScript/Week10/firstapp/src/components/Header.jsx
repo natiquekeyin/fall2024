@@ -9,6 +9,7 @@ const Header = ({ title, body }) => {
       <Button text="Click me" color="blue" />
       <Button text="Stop it" color="red" />
       <Button text="Start" />
+      <Button color="green" text="Some" />
     </div>
   );
 };
