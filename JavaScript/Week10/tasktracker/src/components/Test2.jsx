@@ -2,6 +2,7 @@
 // we will start with array data in next class
 
 import { useState } from "react";
+import Button from "./Button";
 
 const Test2 = () => {
   const obj = {
@@ -20,7 +21,7 @@ const Test2 = () => {
       <h1>{person.height}</h1>
       <h1>{person.isYoung.toString()}</h1>
 
-      <button
+      {/* <button
         onClick={() => {
           setPerson((previousState) => {
             return {
@@ -32,7 +33,20 @@ const Test2 = () => {
         }}
       >
         Change
-      </button>
+      </button> */}
+
+      <Button
+        text="Change"
+        color="green"
+        click={() => {
+          setPerson((previousState) => {
+            return {
+              ...previousState,
+              name: "Bob Smith",
+            };
+          });
+        }}
+      />
     </div>
   );
 };
