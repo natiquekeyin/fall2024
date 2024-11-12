@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { FaCheckDouble } from "react-icons/fa";
 
 const Header = ({ title }) => {
   const onClick = (e) => {
@@ -7,7 +8,10 @@ const Header = ({ title }) => {
   };
   return (
     <header className="header">
-      <h1>{title}</h1>
+      <h1>
+        <FaCheckDouble style={{ color: "green" }} />
+        {title}
+      </h1>
       <Button text="Add" color="green" click={onClick} />
     </header>
   );
