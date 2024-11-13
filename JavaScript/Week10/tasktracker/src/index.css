@@ -42,6 +42,12 @@ body {
   transform: scale(0.98);
 }
 
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
 .task {
   background: #f4f4f4;
   margin: 5px;
@@ -91,10 +97,4 @@ body {
 .form-control-check input {
   flex: 2;
   height: 20px;
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
 }

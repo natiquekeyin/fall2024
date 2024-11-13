@@ -1,18 +1,23 @@
 import Button from "./Button";
 import { FaCheckDouble } from "react-icons/fa";
 
-const Header = ({ title }) => {
-  const onClick = (e) => {
-    console.log("Click");
-    console.log(e);
-  };
+const Header = ({ title, onAdd, showAdd }) => {
+  // const onClick = (e) => {
+  //   console.log("Click");
+  //   console.log(e);
+  // };
   return (
     <header className="header">
       <h1>
         <FaCheckDouble style={{ color: "green" }} />
         {title}
       </h1>
-      <Button text="Add" color="green" click={onClick} />
+      <Button
+        text={showAdd ? "Close" : "Add"}
+        color={showAdd ? "red" : "green"}
+        click={onAdd}
+        showAdd={showAdd}
+      />
     </header>
   );
 };

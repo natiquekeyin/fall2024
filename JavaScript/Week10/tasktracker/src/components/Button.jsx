@@ -1,10 +1,10 @@
 import { FaPlus } from "react-icons/fa";
+import { FaCheckDouble } from "react-icons/fa";
 
-const Button = ({ text, color, click }) => {
+const Button = ({ text, color, click, showAdd }) => {
   return (
     <button className="btn" style={{ backgroundColor: color }} onClick={click}>
-      {" "}
-      <FaPlus />
+      {showAdd ? <FaPlus /> : <FaCheckDouble />}
       {text}
     </button>
   );
