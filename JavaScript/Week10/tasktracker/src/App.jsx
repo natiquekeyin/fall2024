@@ -1,23 +1,32 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, text: "Interview", day: "December 2,2024", reminder: true },
-    { id: 2, text: "GYM", day: "December 28,2024", reminder: false },
-    {
-      id: 3,
-      text: "Doctor's Appointment",
-      day: "January 2,2025",
-      reminder: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+
+      setTasks(tasksFromServer);
+    };
+    getTasks();
+  }, []);
+  // fetch the tasks from server...
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5000/tasks");
+    const data = await res.json();
+    return data;
+  };
 
   // TO delete a task from tasks...
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "DELETE",
+    });
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
@@ -31,12 +40,24 @@ function App() {
   };
 
   // To add a task in current tasks
-  const addTask = (task) => {
+  const addTask = async (task) => {
     // const id = Math.floor(Math.random() * 10000 + 1);
 
-    const id = tasks.length + 1;
-    const newTask = { id, ...task };
-    setTasks([...tasks, newTask]);
+    const res = await fetch("http://localhost:5000/tasks", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(task),
+    });
+
+    const data = await res.json();
+    setTasks([...tasks, data]);
+    // FROM HERE WE WILL START NEXT WEEK...
+
+    // const id = tasks.length + 1;
+    // const newTask = { id, ...task };
+    // setTasks([...tasks, newTask]);
   };
 
   return (
