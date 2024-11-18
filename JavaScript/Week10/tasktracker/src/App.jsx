@@ -22,19 +22,41 @@ function App() {
     return data;
   };
 
+  // fetch ONE task from task from the server...
+
+  const fetchTask = async (id) => {
+    const res = await fetch(`http://localhost:5000/tasks/${id}`);
+    const data = await res.json();
+    return data;
+  };
+
   // TO delete a task from tasks...
   const deleteTask = async (id) => {
     await fetch(`http://localhost:5000/tasks/${id}`, {
       method: "DELETE",
     });
+    // update our UI
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
   // TO toggle the reminder of each task...
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id) => {
+    const taskToToggle = await fetchTask(id);
+    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updTask),
+    });
+
+    const data = await res.json();
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
+        // task.id === id ? { ...task, reminder: !task.reminder } : task
+        task.id === id ? { ...task, reminder: data.reminder } : task
       )
     );
   };
@@ -43,6 +65,7 @@ function App() {
   const addTask = async (task) => {
     // const id = Math.floor(Math.random() * 10000 + 1);
 
+    // to make a POST request to our json server, for posting the new task that was passed to addTask function....
     const res = await fetch("http://localhost:5000/tasks", {
       method: "POST",
       headers: {
@@ -53,6 +76,7 @@ function App() {
 
     const data = await res.json();
     setTasks([...tasks, data]);
+    // ...tasks means bring previous tasks... ,data means now update the tasks with this data ....
     // FROM HERE WE WILL START NEXT WEEK...
 
     // const id = tasks.length + 1;
