@@ -1,11 +1,15 @@
 import { FaAccusoft, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
-    <div
+    <motion.div
       className={`task ${task.reminder ? "reminder" : ""}`}
       onDoubleClick={() => onToggle(task.id)}
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 1.0 } }}
     >
       <h3>
         {task.text}
@@ -19,7 +23,7 @@ const Task = ({ task, onDelete, onToggle }) => {
         {" "}
         <Link to={`/task/${task.id}`}>View Details</Link>
       </p>
-    </div>
+    </motion.div>
   );
 };
 

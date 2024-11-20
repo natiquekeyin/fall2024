@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
@@ -19,36 +20,42 @@ const AddTask = ({ onAdd }) => {
   };
 
   return (
-    <form className="add-form" onSubmit={onSubmit}>
-      <div className="form-control">
-        <label>Task</label>
-        <input
-          type="text"
-          placeholder="Add Task"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </div>
-      <div className="form-control">
-        <label>Day & Time</label>
-        <input
-          type="text"
-          placeholder="Add day & time"
-          value={day}
-          onChange={(e) => setDay(e.target.value)}
-        />
-      </div>
-      <div className="form-control-check">
-        <label>Set Reminder</label>
-        <input
-          type="checkbox"
-          value={reminder}
-          onChange={(e) => setReminder(e.currentTarget.checked)}
-          checked={reminder}
-        />
-      </div>
-      <input type="submit" value="Save Task" className="btn btn-block" />
-    </form>
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+    >
+      <form className="add-form" onSubmit={onSubmit}>
+        <div className="form-control">
+          <label>Task</label>
+          <input
+            type="text"
+            placeholder="Add Task"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </div>
+        <div className="form-control">
+          <label>Day & Time</label>
+          <input
+            type="text"
+            placeholder="Add day & time"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
+          />
+        </div>
+        <div className="form-control-check">
+          <label>Set Reminder</label>
+          <input
+            type="checkbox"
+            value={reminder}
+            onChange={(e) => setReminder(e.currentTarget.checked)}
+            checked={reminder}
+          />
+        </div>
+        <input type="submit" value="Save Task" className="btn btn-block" />
+      </form>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import { motion } from "framer-motion";
 
 const TaskDetails = () => {
   const { pathname } = useLocation();
@@ -29,20 +30,30 @@ const TaskDetails = () => {
   if (error) {
     navigate("/");
   }
-  return loading ? (
-    <h3>Loading...</h3>
-  ) : (
-    <div className="task detail">
-      <p style={{ color: "black", textDecoration: "underline" }}>{pathname}</p>
-      <h3>{task.text}</h3>
-      <p>{task.day}</p>
-      <Button
-        text="Go Back"
-        click={() => {
-          navigate(-1);
-        }}
-      />
-    </div>
+  return (
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 1.0 } }}
+    >
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <div className="task detail">
+          <p style={{ color: "black", textDecoration: "underline" }}>
+            {pathname}
+          </p>
+          <h3>{task.text}</h3>
+          <p>{task.day}</p>
+          <Button
+            text="Go Back"
+            click={() => {
+              navigate(-1);
+            }}
+          />
+        </div>
+      )}
+    </motion.div>
   );
 };
 
