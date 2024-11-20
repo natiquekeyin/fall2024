@@ -103,3 +103,18 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+
+.detail {
+  width: 300px;
+  text-align: center;
+  margin: 10px auto;
+  background-color: cadetblue;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  margin-right: 30px;
+  color: #333;
+  font-weight: 600;
+}

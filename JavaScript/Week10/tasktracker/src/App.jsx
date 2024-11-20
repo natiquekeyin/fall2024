@@ -3,7 +3,10 @@ import Tasks from "./components/Tasks";
 import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Test1 from "./components/Test1";
+import Test2 from "./components/Test2";
+import Test3 from "./components/Test3";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import About from "./components/About";
 import TaskDetails from "./components/TaskDetails";
@@ -118,8 +121,26 @@ function App() {
 
           <Route path="/about" element={<About />} />
           <Route path="/task/:id" element={<TaskDetails />} />
+          <Route path="/test1" element={<Test1 />} />
+          <Route path="/test2" element={<Test2 />} />
+          <Route path="/test3" element={<Test3 />} />
         </Routes>
 
+        <Link to="/" className="link">
+          Home
+        </Link>
+        <Link to="/about" className="link">
+          About
+        </Link>
+        <Link to="/test1" className="link">
+          Test1
+        </Link>
+        <Link to="/test2" className="link">
+          Test2
+        </Link>
+        <Link to="/test3" className="link">
+          Test3
+        </Link>
         <Footer />
       </div>
     </Router>

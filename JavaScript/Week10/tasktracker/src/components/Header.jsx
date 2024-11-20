@@ -14,7 +14,7 @@ const Header = ({ title, onAdd, showAdd }) => {
         <FaCheckDouble style={{ color: "green" }} />
         {title}
       </h1>
-      {location.pathname === "/about" && (
+      {location.pathname === "/" && (
         <Button
           text={showAdd ? "Close" : "Add"}
           color={showAdd ? "red" : "green"}
