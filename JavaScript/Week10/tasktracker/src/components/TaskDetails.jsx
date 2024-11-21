@@ -2,6 +2,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
+import { FaCheckDouble } from "react-icons/fa";
 
 const TaskDetails = () => {
   const { pathname } = useLocation();
@@ -45,12 +46,21 @@ const TaskDetails = () => {
           </p>
           <h3>{task.text}</h3>
           <p>{task.day}</p>
-          <Button
+          {/* <Button
             text="Go Back"
             click={() => {
               navigate(-1);
             }}
-          />
+          /> */}
+
+          <button
+            className="btn"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <FaCheckDouble /> Go Back
+          </button>
         </div>
       )}
     </motion.div>
