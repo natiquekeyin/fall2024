@@ -7,7 +7,7 @@ const actual = addPeriod("Hello");
 const expected = "Hello.";
 
 if (expected !== actual) {
-  console.log("Test failed");
+  alert("Test failed");
 } else {
-  console.log("Test Passed");
+  alert("Test Passed");
 }
