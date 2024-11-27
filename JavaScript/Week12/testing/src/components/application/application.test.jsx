@@ -2,6 +2,7 @@ import { test, expect, describe } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Application from "./Application";
 import "@testing-library/jest-dom/vitest";
+import user from "@testing-library/user-event";
 
 describe("Application", () => {
   test("renders correctly", () => {

@@ -32,4 +32,15 @@ describe("Hobbies", () => {
     });
     expect(startHobbies).not.toBeInTheDocument();
   });
+
+  test("Start Hobbies is eventually displayed", async () => {
+    const startHobbiesButton = await screen.findByRole(
+      "button",
+      {
+        name: "Start Hobbies",
+      },
+      { timeout: 2000 }
+    );
+    expect(startHobbiesButton).toBeInTheDocument();
+  });
 });

@@ -12,6 +12,7 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
+    "@testing-library/user-event": "^14.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
