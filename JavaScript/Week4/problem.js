@@ -13,79 +13,9 @@ var csvData = `0134138,Alan Smith,333-580-2254,70 inches
 0134139   ,    Christina    Lee    ,  123            4126347 ,        130 cm
 0134140,       Doug         Thomas       , 532           4126347, 158cm`;
 
-function splitIntoRows(s) {
-  return s.split(/\r?\n/);
-}
-
-function removeExtraSpace(s) {
-  return s.replace(/\s+/, " ");
-}
-
-function extractAreaCode(phoneNumber) {
-  let matches = phoneNumber.match(/\(?(\d{3})\)?[\s-]*(\d{3})[\s-]*(\d{4})/);
-  if (matches) {
-    // store only the area code in fields[2]
-    return `${matches[1]}-${matches[2]}-${matches[3]}`;
-  }
-  return phoneNumber;
-}
-// Normalize height
-
-function normalizeHeight(height) {
-  if (height.endsWith("inches")) {
-    return height;
-  }
-  let cm = parseFloat(height);
-  let inches = cm * 0.39;
-  // xx-inches
-  inches = Math.round(inches);
-  height = `${inches} inches`;
-
-  return height;
-}
-
-function rowToFields(row) {
-  let fields = row.split(/\s*,\s*/);
-
-  // remove extra spaces around name fields..
-
-  fields[1] = removeExtraSpace(fields[1]);
-
-  // Extract area code from phone number fields
-
-  fields[2] = extractAreaCode(fields[2]);
-
-  // normalize height..
-
-  fields[3] = normalizeHeight(fields[3]);
-
-  return fields.join(",");
-}
-
 function processCSV(csv) {
-  //Step1: convert the csv into array of rows
-  let rows = splitIntoRows(csv);
-
-  //   Step2 - split all rows into array of fields
-
-  //   let data = [];
-  //   for (let i = 0; i < rows.length; i++) {
-  //     let row = rows[i];
-  //     let fields = rowToFields(row);
-  //     data.push(fields);
-  //   }
-
-  //   for (let row of rows) {
-  //     let fields = rowToFields(row);
-  //     data.push(fields);
-  //   }
-
-  let data = rows.map((row) => rowToFields(row));
-
-  return data.join("\n");
+  return csv;
 }
 
 var processed = processCSV(csvData);
 console.log(csvData);
-console.log("--------------------");
-console.log(processed);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunny Bites Café | Order Online</title>
+    <link rel="stylesheet" href="../styles/shared.css" />
+  </head>
+  <body>
+    <header class="order-header">
+      <h1>Order Online</h1>
+      <p>Choose your favorite items and place an order.</p>
+    </header>
+
+    <section class="order-form">
+      <h2>Your Selected Items</h2>
+      <div id="order-summary"></div>
+
+      <h2>Customer Details</h2>
+      <form id="orderForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required />
+
+        <label for="address">Delivery Address:</label>
+        <input type="text" id="address" required />
+
+        <h3>Total: $<span id="total-cost">0.00</span></h3>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+
+    <footer>
+      <a href="../index.html">Back to Home</a> |
+      <a href="./menu.html">View Menu</a>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
